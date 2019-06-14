@@ -3,6 +3,7 @@
 Clone this project and install all the dependencies.
 
 ```
+
  $ npm init
  
  $ npm install body-parser --save
@@ -10,4 +11,5 @@ Clone this project and install all the dependencies.
  $ npm install express --save
  
  $ npm install mysql --save
+ 
 ```
