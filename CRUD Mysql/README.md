@@ -2,7 +2,9 @@
 
 Clone this project and install all the dependencies.
 
+```
  $ npm init.
  $ npm install body-parser.
  $ npm install express.
  $ npm install mysql.
+```
