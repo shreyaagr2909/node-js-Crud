@@ -11,5 +11,6 @@ Clone this project and install all the dependencies.
  $ npm install mysql --save
 ```
  
- To  run this go to the localhost and with port number 3000 
+ To  run this go to the localhost and with port number 3000.
+ 
  To perform the pagination write like this on your browser (e.g. localhost:3000/students/?limit=3&offset=1)
