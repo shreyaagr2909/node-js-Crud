@@ -13,4 +13,4 @@ Clone this project and install all the dependencies.
  
  To  run this go to the localhost and with port number 3000.
  
- To perform the pagination write like this on your browser (e.g. localhost:3000/students/?limit=3&offset=1)
+ To perform the pagination write like this on your browser (e.g. http://localhost:3000/students/?pagesize=2&pageNo=4)
