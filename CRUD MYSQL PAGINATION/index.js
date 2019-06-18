@@ -19,12 +19,6 @@ con.connect(function(err){
 });
 
 app.get('/students',function(req,res){
-    var limit = (req.query.limit)  ;
-    var offset = (req.query.offset) ;
-    console.log(req.query.limit);
-    console.log("hi");
-    console.log(req.query.offset)
-    //let sql = "select * from student";
      let sql = "select * from student limit  " + req.query.offset + "," +req.query.limit 
      console.log(sql);
     let query = con.query(sql,function(err,result){
