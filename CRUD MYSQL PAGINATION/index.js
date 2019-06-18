@@ -19,9 +19,12 @@ con.connect(function(err){
 });
 
 app.get('/students',function(req,res){
-     let sql = "select * from student limit  " + req.query.offset + "," + req.query.limit 
-     console.log(sql);
-    let query = con.query(sql,function(err,result){
+   var pageSize = req.query.pagesize;
+   var pageNo = req.query.pageNo;
+   var currentPage = pageSize * (pageNo-1) ;
+   let sql = "select * from student limit " + currentPage + "," + pageSize ;
+    
+     con.query(sql,function(err,result){
         if(err) throw err;
         res.send(JSON.stringify(result));
     });
