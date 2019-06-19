@@ -27,15 +27,30 @@ exports.create = (req, res) => {
 };
 
 exports.findAll = (req, res) => {
-    Stud.find()
-    .select(' _id id name course place phone_no')
-    .then(stud => {
-        res.send(stud);
-    }).catch(err => {
-        res.status(500).send({
-            message: err.message 
+    var pageNo = parseInt(req.query.pageNo);
+    var size = parseInt(req.query.size);
+    console.log(pageNo);
+    console.log(size);
+    var skips = size * (pageNo - 1);
+    console.log(skips);
+
+    Stud.find().skip(skips).limit(size).select(' _id id name course place phone_no').then(stud => {
+            res.send(stud);
+        }).catch(err => {
+            res.status(500).send({
+                message: err.message 
+            });
         });
-    });
+// To get the list of all students.
+    // Stud.find()
+    // .select(' _id id name course place phone_no')
+    // .then(stud => {
+    //     res.send(stud);
+    // }).catch(err => {
+    //     res.status(500).send({
+    //         message: err.message 
+    //     });
+    // });
 };
 
 exports.findOne = (req, res) => {
