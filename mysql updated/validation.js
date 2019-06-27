@@ -1,6 +1,4 @@
 
-var i = 0;
-var unique = [];
 
 var validation = {
 
